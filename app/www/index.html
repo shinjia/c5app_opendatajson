@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>[c5app] opendatajson</title>
+  
+</head>
+
+<body>
+<h1>Open Data JSON</h1>
+
+<button id="btn">讀取資料 .ajax</button>
+<div id="showarea"></div>
+<ul id="itemlist">
+</ul>
+
+
+
+
+<script src="js/jquery.min.js"></script>  
+<script>
+	/* jquery.js */
+
+var ext = '&callback=?';
+
+var url = 'https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005?sort=PublishTime&offset=0&limit=1000';  //紫外線指數
+
+
+url = url + ext;
+
+
+$('#btn').click(function(){
+  $.ajax({
+    dataType: "json",
+    url: url,
+    success: function(data){
+      $('#showarea').html(JSON.stringify(data[0]));
+      func_show(data);
+    },
+    error: function(){ 
+    	console.log('error');
+    	$('#showarea').html('error');
+    },
+  }); // end of ajax()
+}); // end of click()
+
+
+
+var func_show = function(data){
+  var items = [];
+  var datalist = data.result.records;
+  $.each(datalist, function(i, item) {
+    
+    var SiteName = item.SiteName;
+    var County = item.County;
+    var PublishTime = item.PublishTime;
+    var UVI = item['UVI'];
+ 
+    var str = SiteName + ', ' + County + ', ' + ', ' + UVI + ', ' + PublishTime;
+     
+    items.push('<li>' + str + '</li>');
+  }); // end of each()
+  
+  $('#itemlist li').remove();
+  $('#itemlist').append( items.join('') );
+};
+</script>
+
+
+
+
+</body>
+
+</html>
