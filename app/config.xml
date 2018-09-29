@@ -32,9 +32,10 @@
 
 	<!-- Add the whitelist plugin -->
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="*"/>
-    
-    <access origin="https://*"/>
 
+<!--
+    <access origin="https://*"/>
+-->
 	<!-- The above is equivalent to these three declarations -->
 	<allow-navigation href="http://*/*" />
 	<allow-navigation href="https://*/*" />
