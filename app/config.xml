@@ -2,8 +2,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
 		id	    = "tw.whatmake.shinjia.c5app.opendatajson"
-		versionCode = "2" 
-		version     = "0.1.1" >
+		versionCode = "3" 
+		version     = "0.1.2" >
  
 	<name>opendatajson</name>
  
@@ -33,9 +33,9 @@
 	<!-- Add the whitelist plugin -->
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="*"/>
 
-<!--
+
     <access origin="https://*"/>
--->
+
 	<!-- The above is equivalent to these three declarations -->
 	<allow-navigation href="http://*/*" />
 	<allow-navigation href="https://*/*" />
