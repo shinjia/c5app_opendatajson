@@ -35,7 +35,7 @@
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="*"/>
 
 
-    <access origin="https://*"/>
+    <access origin="*" />
 
 	<!-- The above is equivalent to these three declarations -->
 	<allow-navigation href="http://*/*" />
