@@ -11,10 +11,12 @@
 <h1>Open Data JSON </h1>
 
 <ul>
-  <li><button onclick="change(1);">change</button>https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005?sort=PublishTime&offset=0&limit=1000&callback=?</li>
-  <li><button onclick="change(2);">change</button>https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005?sort=PublishTime&offset=0&limit=1000</li>
-  <li><button onclick="change(3);">change</button>https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005</li>
-  <li><button onclick="change(4);">change</button>http://g9app.com/test/json/test.json</li>
+  <li><button onclick="change(1);">change</button>https://opendata.&callback=?</li>
+  <li><button onclick="change(2);">change</button>https://opendata.?sort=PublishTime&offset=0&limit=1000</li>
+  <li><button onclick="change(3);">change</button>https://opendata.單純網址</li>
+  <li><button onclick="change(4);">change</button>test.jon</li>
+  <li><button onclick="change(5);">change</button>test1.php</li>
+  <li><button onclick="change(6);">change</button>test2.php (含跨網域)</li>
 </ul>
 <div id="source"><input type="text" id="source_json" value="" style="width:100%;"></div>
 
@@ -47,6 +49,16 @@ function change(n)
 	{
 		document.getElementById('source_json').value='http://g9app.com/test/json/test.json';
 	}
+
+	if(n==5)
+	{
+		document.getElementById('source_json').value='http://g9app.com/test/json/test1.php';
+	}
+
+	if(n==6)
+	{
+		document.getElementById('source_json').value='http://g9app.com/test/json/test2.php';
+	}
 }
 </script>
 
@@ -55,16 +67,15 @@ function change(n)
 <script>
 	/* jquery.js */
 var ext = '&callback=?';
-
 var url = 'https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005?sort=PublishTime&offset=0&limit=1000';  //紫外線指數
-
 
 // url = url + ext;
 
 
-
 $('#btn').click(function(){
 
+    $('#showarea').html('loading...');
+    $('#itemlist li').remove();
 	url = document.getElementById('source_json').value;
 	link = '<br><a href="'+url+'">' + url + '</a>'; 
 
@@ -72,7 +83,8 @@ $('#btn').click(function(){
     dataType: "json",
     url: url,
     success: function(data){
-      $('#showarea').html(JSON.stringify(data[0]));
+      $('#showarea').html('read ok');
+      $('#showarea').html(JSON.stringify(data.result.records[0]));
       func_show(data);
     },
     error: function (xhr, ajaxOptions, thrownError) {
