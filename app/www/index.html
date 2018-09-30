@@ -32,6 +32,8 @@ var url = 'https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-0000
 url = url + ext;
 
 url = 'http://g9app.com/test/json/test.json';
+link = '<a href="http://g9app.com/test/json/test.json">http://g9app.com/test/json/test.json</a>'; 
+
 
 $('#btn').click(function(){
   $.ajax({
@@ -42,7 +44,7 @@ $('#btn').click(function(){
       func_show(data);
     },
     error: function (xhr, ajaxOptions, thrownError) {
-        $('#showarea').html('error: ' + xhr.status);
+        $('#showarea').html('error: ' + xhr.status + link);
         //$('#showarea').html(xhr.status);
         //$('#showarea').html(thrownError);
     },
