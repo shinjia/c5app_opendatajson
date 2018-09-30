@@ -36,5 +36,6 @@
 
 	<!-- The above is equivalent to these three declarations -->
 	<allow-navigation href="http://*/*" />
+	<allow-navigation href="https://*/*" />
 
 </widget>

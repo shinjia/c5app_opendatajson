@@ -8,32 +8,66 @@
 </head>
 
 <body>
-<h1>Open Data JSON 6</h1>
+<h1>Open Data JSON </h1>
 
+<ul>
+  <li><button onclick="change(1);">change</button>https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005?sort=PublishTime&offset=0&limit=1000&callback=?</li>
+  <li><button onclick="change(2);">change</button>https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005?sort=PublishTime&offset=0&limit=1000</li>
+  <li><button onclick="change(3);">change</button>https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005</li>
+  <li><button onclick="change(4);">change</button>http://g9app.com/test/json/test.json</li>
+</ul>
+<div id="source"><input type="text" id="source_json" value="" style="width:100%;"></div>
+
+<p>紫外線指數
 <button id="btn">讀取資料 .ajax</button>
+</p>
+
+
 <div id="showarea"></div>
 <ul id="itemlist">
 </ul>
 
+<script>
+function change(n)
+{
+	if(n==1)
+	{
+		document.getElementById('source_json').value='https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005?sort=PublishTime&offset=0&limit=1000&callback=?';
+	}
+	if(n==2)
+	{
+		document.getElementById('source_json').value='https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005?sort=PublishTime&offset=0&limit=1000';
+	}
+	if(n==3)
+	{
+		document.getElementById('source_json').value='https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005';
+	}
 
+	if(n==4)
+	{
+		document.getElementById('source_json').value='http://g9app.com/test/json/test.json';
+	}
+}
+</script>
 
 
 <script src="js/jquery.min.js"></script>  
 <script>
 	/* jquery.js */
-
 var ext = '&callback=?';
 
 var url = 'https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000005?sort=PublishTime&offset=0&limit=1000';  //紫外線指數
 
 
-url = url + ext;
+// url = url + ext;
 
-url = 'http://g9app.com/test/json/test.json';
-link = '<a href="'+url+'">' + url + '</a>'; 
 
 
 $('#btn').click(function(){
+
+	url = document.getElementById('source_json').value;
+	link = '<br><a href="'+url+'">' + url + '</a>'; 
+
   $.ajax({
     dataType: "json",
     url: url,
@@ -42,7 +76,7 @@ $('#btn').click(function(){
       func_show(data);
     },
     error: function (xhr, ajaxOptions, thrownError) {
-        $('#showarea').html('error: ' + xhr.status + link);
+        $('#showarea').html('error: ' + xhr.status +link);
         //$('#showarea').html(xhr.status);
         //$('#showarea').html(thrownError);
     },
@@ -77,3 +111,4 @@ var func_show = function(data){
 </body>
 
 </html>
+
