@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<h1>Open Data JSON 3</h1>
+<h1>Open Data JSON 5</h1>
 
 <button id="btn">讀取資料 .ajax</button>
 <div id="showarea"></div>
@@ -41,8 +41,7 @@ $('#btn').click(function(){
       func_show(data);
     },
     error: function (xhr, ajaxOptions, thrownError) {
-    	$('#showarea').html('32error ');
-        //$('#showarea').html('3error: ' + xhr.status);
+        $('#showarea').html('5error: ' + xhr.status);
         //$('#showarea').html(xhr.status);
         //$('#showarea').html(thrownError);
     },
