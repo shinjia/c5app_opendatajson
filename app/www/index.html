@@ -41,9 +41,10 @@ $('#btn').click(function(){
       func_show(data);
     },
     error: function (xhr, ajaxOptions, thrownError) {
-        $('#showarea').html('error: ' + xhr.status);
-        $('#showarea').html(xhr.status);
-        $('#showarea').html(thrownError);
+    	$('#showarea').html('32error ');
+        //$('#showarea').html('3error: ' + xhr.status);
+        //$('#showarea').html(xhr.status);
+        //$('#showarea').html(thrownError);
     },
   }); // end of ajax()
 }); // end of click()
