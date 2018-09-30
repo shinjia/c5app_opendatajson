@@ -5,12 +5,10 @@
   <meta charset="UTF-8">
   <title>[c5app] opendatajson</title>
   
-  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-  
 </head>
 
 <body>
-<h1>Open Data JSON 5</h1>
+<h1>Open Data JSON 6</h1>
 
 <button id="btn">讀取資料 .ajax</button>
 <div id="showarea"></div>
@@ -32,7 +30,7 @@ var url = 'https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-0000
 url = url + ext;
 
 url = 'http://g9app.com/test/json/test.json';
-link = '<a href="http://g9app.com/test/json/test.json">http://g9app.com/test/json/test.json</a>'; 
+link = '<a href="'+url+'">' + url + '</a>'; 
 
 
 $('#btn').click(function(){
