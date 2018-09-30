@@ -2,8 +2,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
 		id	    = "tw.whatmake.shinjia.c5app.opendatajson"
-		versionCode = "6" 
-		version     = "0.1.5" >
+		versionCode = "7" 
+		version     = "0.1.6" >
  
 	<name>opendatajson</name>
  
@@ -37,5 +37,9 @@
 	<!-- The above is equivalent to these three declarations -->
 	<allow-navigation href="http://*/*" />
 	<allow-navigation href="https://*/*" />
+	
+	<access origin="*" />
+    <allow-intent href="*" />
+    <allow-navigation href="*" />
 
 </widget>
