@@ -2,8 +2,8 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 		xmlns:gap   = "http://phonegap.com/ns/1.0"
 		id	    = "tw.whatmake.shinjia.c5app.opendatajson"
-		versionCode = "5" 
-		version     = "0.1.4" >
+		versionCode = "6" 
+		version     = "0.1.5" >
  
 	<name>opendatajson</name>
  
