@@ -32,8 +32,8 @@
     
 
 	<!-- Add the whitelist plugin -->
-	<plugin name="cordova-plugin-whitelist" source="npm" spec="*"/>
-    
+	<plugin name="cordova-plugin-whitelist" spec="1.3.3" />
+
     <access origin="https://*" />
 
 	<!-- The above is equivalent to these three declarations -->
